@@ -27,5 +27,5 @@ async def model_request(day: Day) -> float:
     result = round(result[0], 3)
     async for db in get_session():
         await add_prediction(db, dict(day), result)
-    return result
+    return {"result": result}
 
